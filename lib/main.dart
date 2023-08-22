@@ -11,8 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text('Animal sounds')),
+        appBar: AppBar(title: Text('Animal sounds'),
+        backgroundColor: Colors.red,),
         body: ContainerPage(),
       ),
     );
@@ -57,7 +59,7 @@ class ContainerPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset('assets/chicken2.png', height: 100, width: 100,),
+                        Image.asset('assets/Chicken.jpeg', height: 110, width: 110,),
                         SizedBox(height: 10,),
                         Text("CHICKEN", style: TextStyle(
                           fontSize: 18,
@@ -71,17 +73,31 @@ class ContainerPage extends StatelessWidget {
               SizedBox(width: 20), // Add spacing between containers
               GestureDetector(
                 onTap: () {
-                  // Handle click for Container 2
-                  print('Container 2 clicked');
+                  assetsAudioPlayer.open(
+                    Audio('assets/catMeow.mp3'), // Replace with your audio file path
+                  );
+                  print('Audio playing from Container 1');
                 },
                 child: Container(
                   width: containerWidth,
                   height: 150,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                      border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(child: Text('Container 2')),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset('assets/Cat.jpeg', height: 110, width: 110,),
+                        SizedBox(height: 10,),
+                        Text("CAT", style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                        ),)
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
@@ -93,22 +109,27 @@ class ContainerPage extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   assetsAudioPlayer.open(
-                    Audio('assets/key.mp3'), // Replace with your audio file path
+                    Audio('assets/lionSound.aac'), // Replace with your audio file path
                   );
-                  print('Audio playing from Container 1');
+                  print('Audio playing from Container 3');
                 },
                 child: Container(
                   width: containerWidth,
                   height: 150,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
+                      border: Border.all(color: Colors.black),
                       borderRadius: BorderRadius.circular(10)
                   ),
                   child: Center(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Image.asset('assets/chicken.png'),
-                        Text("CHICKEN")
+                        Image.asset('assets/Lion.jpeg', height: 110, width: 110,),
+                        SizedBox(height: 10,),
+                        Text("LION", style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                        ),)
                       ],
                     ),
                   ),
@@ -117,17 +138,31 @@ class ContainerPage extends StatelessWidget {
               SizedBox(width: 20), // Add spacing between containers
               GestureDetector(
                 onTap: () {
-                  // Handle click for Container 2
-                  print('Container 2 clicked');
+                  assetsAudioPlayer.open(
+                    Audio('assets/elephantSound.mpeg'), // Replace with your audio file path
+                  );
+                  print('Audio playing from Container 4');
                 },
                 child: Container(
                   width: containerWidth,
                   height: 150,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black),
+                      borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(child: Text('Container 2')),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Image.asset('assets/elephant.jpeg', height: 110, width: 110,),
+                        SizedBox(height: 10,),
+                        Text("ELEPHANT", style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold
+                        ),)
+                      ],
+                    ),
+                  ),
                 ),
               ),
             ],
